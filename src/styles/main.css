@@ -1,0 +1,65 @@
+html,
+body {
+    --color-dark-gray: #272727;
+    --color-gray: #979797;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    font-family: 'Futura PT', sans-serif;
+    font-weight: 400;
+    background: var(--color-white);
+}
+
+@media (max-width: 1400px) and (min-width: 1024px) {
+    html {
+        font-size: 1.14vw;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 600;
+    color: var(--color-dark-gray);
+}
+
+h2 {
+    font-size: calc(44 / 16 * 1rem);
+    line-height: 100%;
+}
+
+button {
+    font-family: 'Futura PT', sans-serif;
+    font-weight: 600;
+}
+
+.contain {
+    position: relative;
+    right: 37px;
+    margin: 0 auto;
+    max-width: calc(1150 / 16 * 1rem);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 1023px) {
+    .contain {
+        right: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    .contain {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

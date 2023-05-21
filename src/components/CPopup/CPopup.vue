@@ -1,0 +1,335 @@
+<template>
+  <div class="popup" :class="{ popup_open: open }">
+    <div class="popup__background" @click="closePopup" />
+
+    <section class="popup__wrapper">
+      <h3 class="popup__title">Выбор населённого пункта:</h3>
+      <div class="popup__body">
+        <div class="popup__input-wrapper">
+          <input
+            v-model="keyWord"
+            type="text"
+            class="popup__input"
+            :class="{ popup__input_active: listCities }"
+            placeholder="Например, Санкт-петербург"
+          />
+          <div v-if="listCities" class="popup__list-wrapper">
+            <div class="popup__list-contain">
+              <ul class="popup__list">
+                <li
+                  v-for="city in listCities"
+                  :key="city.id"
+                  class="popup__list-item"
+                  @click="selectCity(city)"
+                >
+                  {{ city.label }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button
+            v-if="checkClearInput"
+            class="popup__input-clear"
+            @click="clearInputArea"
+          />
+        </div>
+        <div
+          class="popup__submit-wrapper"
+          :class="{ 'popup__submit-wrapper_active': selectedCity }"
+        >
+          <button
+            class="popup__submit"
+            :disabled="!selectedCity"
+            @click="submit"
+          >
+            Подтвердить
+          </button>
+        </div>
+      </div>
+      <button class="popup__close" @click="closePopup" />
+    </section>
+  </div>
+</template>
+
+<script>
+import { getListCities } from "../../api";
+
+export default {
+  props: {
+    open: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  emits: ["close", "selectedCity"],
+  data() {
+    return {
+      keyWord: "",
+      listCities: null,
+      selectedCity: null,
+    };
+  },
+  computed: {
+    checkClearInput() {
+      return this.keyWord.length > 0;
+    },
+  },
+  watch: {
+    keyWord(v, ov) {
+      if (!v || v === ov) return;
+
+      this.keyWord = v.replace(/\d+/, "");
+
+      if (v.length >= 3 && !this.selectedCity) this.getList(v);
+      if (v.length < 3) this.listCities = null;
+      if (this.selectedCity?.label !== v) this.selectedCity = null;
+    },
+    open() {
+      document.body.classList.toggle("no-scroll");
+    },
+  },
+  methods: {
+    async getList(term) {
+      const { data } = await getListCities(term);
+
+      this.listCities = data;
+    },
+    clearInputArea() {
+      this.keyWord = "";
+      this.listCities = null;
+      this.selectedCity = null;
+    },
+    closePopup() {
+      this.clearInputArea();
+      this.$emit("close");
+    },
+    selectCity(data) {
+      this.selectedCity = data;
+      this.keyWord = this.selectedCity.label;
+      this.listCities = null;
+    },
+    submit() {
+      this.$emit("selectedCity", this.selectedCity);
+      this.closePopup();
+    },
+  },
+};
+</script>
+
+<style>
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.popup_open {
+  display: block;
+}
+
+.popup__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #353647;
+  opacity: 0.8;
+}
+
+.popup__wrapper {
+  padding: calc(28 / 16 * 1rem) calc(18 / 16 * 1rem) calc(32 / 16 * 1rem)
+    calc(19 / 16 * 1rem);
+  width: fit-content;
+  position: relative;
+  top: 33.47vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  box-shadow: 0px 2px 10px rgba(151, 151, 151, 0.2);
+  border-radius: 5px;
+}
+
+.popup__title {
+  padding-bottom: calc(12 / 16 * 1rem);
+  font-size: calc(20 / 16 * 1rem);
+  line-height: calc(24 / 16 * 1rem);
+}
+
+.popup__body {
+  display: flex;
+  align-items: center;
+}
+
+.popup__input-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-right: calc(18 / 16 * 1rem);
+  font-size: 0;
+}
+
+.popup__input {
+  padding: calc(11 / 16 * 1rem) calc(36 / 16 * 1rem) calc(12 / 16 * 1rem)
+    calc(16 / 16 * 1rem);
+  width: min(calc(540 / 16 * 1rem), 70vw);
+  border: 1px solid rgba(151, 151, 151, 0.5);
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 128%;
+}
+
+.popup__input::placeholder {
+  color: var(--color-gray);
+}
+
+.popup__input_active {
+  border: solid var(--color-dark-gray);
+  border-width: 1px 1px 0 1px;
+  border-radius: 5px 5px 0 0;
+}
+
+.popup__list-wrapper {
+  padding: calc(12 / 16 * 1rem) calc(11 / 16 * 1rem);
+  position: absolute;
+  height: calc(172 / 16 * 1rem);
+  width: 100%;
+  background: var(--color-white);
+  border: solid var(--color-dark-gray);
+  border-width: 0 1px 1px 1px;
+  border-radius: 0 0 5px 5px;
+}
+
+.popup__list-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12 / 16 * 1rem);
+  right: calc(20 / 16 * 1rem);
+  display: block;
+  height: calc(2 / 16 * 1rem);
+  background: rgba(151, 151, 151, 0.3);
+}
+
+.popup__list-contain {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.popup__list {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.popup__list-item {
+  font-size: calc(18 / 16 * 1rem);
+  line-height: 133%;
+  color: var(--color-gray);
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.popup__list-item:not(:first-child) {
+  margin-top: calc(7 / 16 * 1rem);
+}
+
+.popup__list-item:hover {
+  color: var(--color-dark-gray);
+}
+
+.popup__input-clear {
+  position: absolute;
+  top: calc(21 / 16 * 1rem);
+  right: calc(20 / 16 * 1rem);
+  width: calc(12 / 16 * 1rem);
+  height: calc(12 / 16 * 1rem);
+  background-image: url("../../assets/images/close.svg");
+  background-size: calc(16 / 16 * 1rem) calc(16 / 16 * 1rem);
+  background-position: center;
+  cursor: pointer;
+}
+
+.popup__submit-wrapper {
+  position: relative;
+}
+
+.popup__submit {
+  position: relative;
+  z-index: 1;
+  padding: calc(11 / 16 * 1rem) calc(22 / 16 * 1rem) calc(12 / 16 * 1rem)
+    calc(23 / 16 * 1rem);
+  font-size: calc(16 / 16 * 1rem);
+  line-height: 131%;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  color: #acacac;
+  border: 2px solid rgba(151, 151, 151, 0.3);
+  border-radius: 24px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.popup__submit-wrapper_active .popup__submit {
+  color: var(--color-white);
+  background: linear-gradient(270deg, #ffa800 0%, #ff6f00 60.2%);
+  cursor: pointer;
+}
+
+.popup__submit-wrapper_active::after {
+  content: "";
+  position: absolute;
+  top: calc(8 / 16 * 1rem);
+  left: calc(15 / 16 * 1rem);
+  display: block;
+  width: calc(145 / 16 * 1rem);
+  height: calc(48 / 16 * 1rem);
+  background: linear-gradient(
+    270deg,
+    rgba(255, 168, 0, 0.6) 0%,
+    rgba(255, 111, 0, 0.6) 100%
+  );
+  filter: blur(14px);
+}
+
+.popup__close {
+  position: absolute;
+  top: calc(18 / 16 * 1rem);
+  right: calc(18 / 16 * 1rem);
+  width: calc(16 / 16 * 1rem);
+  height: calc(16 / 16 * 1rem);
+  background-image: url("../../assets/images/close.svg");
+  background-size: contain;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .popup__wrapper {
+    padding-top: 40px;
+  }
+
+  .popup__body {
+    flex-direction: column;
+  }
+
+  .popup__submit-wrapper {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 451px) {
+  .popup__input {
+    font-size: 14px;
+  }
+
+  .popup__list-item {
+    font-size: 14px;
+  }
+}
+</style>
