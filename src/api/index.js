@@ -38,3 +38,13 @@ export async function getListCities(term, country = "ru") {
 
   return data;
 }
+
+export async function getProducts(cityId, slug) {
+  const { data } = await api.get(`/menutags/${slug}/`, {
+    params: {
+      city_id: cityId,
+    },
+  });
+
+  return data;
+}

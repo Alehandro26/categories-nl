@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import { getMenuTags } from "@/api";
 
 export default createStore({
   state() {
@@ -25,6 +26,10 @@ export default createStore({
     writeIdCity({ state, commit }, id) {
       localStorage.setItem(state.nameIdStorage, id);
       commit("setIdCity", id);
+    },
+    async getTags({ commit }, id) {
+      const { tags } = await getMenuTags(id);
+      commit("setTags", tags);
     },
   },
 });

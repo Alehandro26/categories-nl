@@ -21,8 +21,17 @@ export default {
       recordedIdCity: "recordedIdCity",
     }),
   },
+  watch: {
+    recordedIdCity(v, ov) {
+      if (v === ov) return;
+
+      this.$store.commit("setTags", null);
+      this.$store.dispatch("getTags", v);
+    },
+  },
   created() {
     this.writeLocalId();
+    this.$store.dispatch("getTags", this.recordedIdCity);
   },
   methods: {
     writeLocalId() {

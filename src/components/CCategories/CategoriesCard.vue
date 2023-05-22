@@ -1,54 +1,107 @@
 <template>
   <div class="categories-card">
-    <img src="" alt="" class="categories-card__image" />
+    <img
+      :src="data.main_image_thumb_300"
+      alt=""
+      class="categories-card__image"
+    />
     <div class="categories-card__text-wrapper">
-      <span class="categories-card__text" />
-      <h4 class="categories-card__title" />
-      <span class="categories-card__description" />
-      <span class="categories-card__price" />
+      <span class="categories-card__text">{{ data.category.name }}</span>
+      <h4 class="categories-card__title">{{ data.present_name }}</h4>
+      <span class="categories-card__description">{{ data.comment_name }}</span>
+      <span class="categories-card__price">{{ `${data.price} ₽` }}</span>
     </div>
-    <button class="categories-card__button" />
+
+    <CButton
+      class="categories__button"
+      :available="data.allowed && data.available"
+    />
   </div>
 </template>
 
 <script>
-export default {};
+import CButton from "../CButton/CButton.vue";
+
+export default {
+  components: { CButton },
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+  },
+};
 </script>
 
 <style>
 .categories-card {
+  width: calc(276 / 16 * 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
+  box-shadow: 0px 2px 10px rgba(151, 151, 151, 0.2);
+  border-radius: 0px 0px 5px 5px;
 }
 .categories-card__image {
+  width: 100%;
 }
 .categories-card__text-wrapper {
-  padding-bottom: 16px;
+  width: 100%;
+  height: 100%;
+  padding: calc(6 / 16 * 1rem) calc(10 / 16 * 1rem) calc(16 / 16 * 1rem);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 .categories-card__text {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: calc(14 / 16 * 1rem);
+  line-height: 100%;
   color: var(--color-gray);
 }
 .categories-card__title {
   padding: 4px 0 9px;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: calc(20 / 16 * 1rem);
+  line-height: 120%;
   color: var(--color-dark-gray);
 }
 .categories-card__description {
   padding-bottom: 14px;
-  font-size: 16px;
-  line-height: 20px;
+  margin-top: auto;
+  font-size: calc(16 / 16 * 1rem);
+  line-height: 125%;
   color: var(--color-dark-gray);
 }
 .categories-card__price {
+  font-weight: 600;
+  font-size: calc(26 / 16 * 1rem);
+  line-height: 92%;
   color: var(--color-dark-gray);
 }
-.categories-card__button {
-  padding: 6px 0 10px;
-  width: 212px;
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  line-height: 24px;
+
+.categories__button {
+  margin-bottom: 23px;
+}
+
+@media (max-width: 767px) {
+  .categories-card {
+    width: 180px;
+  }
+
+  .categories-card__text {
+    font-size: 12px;
+  }
+
+  .categories-card__title {
+    font-size: 17px;
+  }
+
+  .categories-card__description {
+    font-size: 14px;
+  }
+
+  .categories-card__price {
+    font-size: 23px;
+  }
 }
 </style>

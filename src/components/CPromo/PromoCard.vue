@@ -43,9 +43,9 @@ export default {
 .promo-card__title {
   position: absolute;
   z-index: 1;
-  top: 20px;
-  left: 20px;
-  right: 10px;
+  top: calc(20 / 16 * 1rem);
+  left: calc(20 / 16 * 1rem);
+  right: calc(10 / 16 * 1rem);
   font-size: calc(24 / 16 * 1rem);
   line-height: 117%;
 }

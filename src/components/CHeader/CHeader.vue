@@ -30,6 +30,7 @@ export default {
   watch: {
     id() {
       this.$store.dispatch("writeIdCity", +this.id);
+      this.$router.push("/");
     },
   },
   mounted() {

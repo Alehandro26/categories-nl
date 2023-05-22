@@ -6,7 +6,7 @@ body {
     --color-black: #000000;
     font-family: 'Futura PT', sans-serif;
     font-weight: 400;
-    background: var(--color-white);
+    background: #F7F7F7;
 }
 
 @media (max-width: 1400px) and (min-width: 1024px) {
@@ -36,7 +36,7 @@ button {
 
 .contain {
     position: relative;
-    right: 37px;
+    right: calc(37 / 16 * 1rem);
     margin: 0 auto;
     max-width: calc(1150 / 16 * 1rem);
 }

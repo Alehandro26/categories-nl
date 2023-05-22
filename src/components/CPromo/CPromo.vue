@@ -13,54 +13,22 @@
           :text-color="item.text_color"
         />
       </div>
-      <img
-        v-else
-        src="@/assets/images/load.svg"
-        alt="Загрузка списка"
-        class="promo__load"
-      />
+      <CLoad v-else />
     </div>
   </section>
 </template>
 
 <script>
+import CLoad from "../CLoad/CLoad.vue";
 import PromoCard from "./PromoCard.vue";
-import { getMenuTags } from "@/api";
-import { mapGetters, mapState } from "vuex";
+import { mapState } from "vuex";
 
 export default {
-  components: { PromoCard },
-  data() {
-    return {
-      listCategories: null,
-    };
-  },
+  components: { PromoCard, CLoad },
   computed: {
-    ...mapGetters({
-      recordedIdCity: "recordedIdCity",
-    }),
     ...mapState({
       tags: "tags",
     }),
-  },
-  watch: {
-    recordedIdCity(v, ov) {
-      if (v === ov) return;
-
-      this.$store.commit("setTags", null);
-      this.getTags(v);
-    },
-  },
-  mounted() {
-    this.getTags(this.recordedIdCity);
-  },
-  methods: {
-    async getTags(id) {
-      const { tags } = await getMenuTags(id);
-      console.log(tags);
-
-      this.$store.commit("setTags", tags);
-    },
   },
 };
 </script>
@@ -68,7 +36,7 @@ export default {
 <style>
 .promo__contain {
   padding-top: calc(35 / 16 * 1rem);
-  padding-bottom: calc(156 / 16 * 1rem);
+  padding-bottom: calc(176 / 16 * 1rem);
 }
 
 .promo__title {
@@ -78,16 +46,6 @@ export default {
   display: flex;
   gap: calc(22 / 16 * 1rem);
   flex-wrap: wrap;
-}
-
-.promo__load {
-  position: fixed;
-  width: calc(70 / 16 * 1rem);
-  height: calc(70 / 16 * 1rem);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: rotate 1s linear infinite;
 }
 
 @media (max-width: 767px) {
@@ -103,15 +61,6 @@ export default {
 
   .promo__list {
     justify-content: center;
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 </style>
