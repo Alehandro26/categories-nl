@@ -63,9 +63,9 @@ export default {
     goToCategory(data) {
       const [slug] = data;
       if (slug) {
-        this.$router.push(`/categories/${this.$route.params.slug}/${slug}`);
+        this.$router.push(`/categories/${this.$route.params.slug}/${slug}/`);
       } else {
-        this.$router.push(`/categories/${this.$route.params.slug}`);
+        this.$router.push(`/categories/${this.$route.params.slug}/`);
       }
       setTimeout(() => this.loadProducts());
 

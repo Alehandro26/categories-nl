@@ -19,7 +19,7 @@ export default createRouter({
       pathToRegexpOptions,
     },
     {
-      path: "/categories/:slug/:subslug?",
+      path: "/categories/:slug/:subslug?/",
       name: "categories",
       component: CategoriesPage,
       pathToRegexpOptions,

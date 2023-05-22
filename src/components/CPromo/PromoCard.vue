@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/categories/${slug}`" class="promo-card">
+  <router-link :to="`/categories/${slug}/`" class="promo-card">
     <h3 class="promo-card__title" :style="{ color: textColor }">{{ title }}</h3>
     <img :src="image" alt="" class="promo-card__image" />
   </router-link>
