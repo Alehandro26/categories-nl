@@ -19,7 +19,7 @@ export default createStore({
   },
   getters: {
     recordedIdCity(state) {
-      return state.idCity ?? +localStorage.getItem(state.nameIdStorage);
+      return (state.idCity ?? +localStorage.getItem(state.nameIdStorage)) || 1;
     },
   },
   actions: {

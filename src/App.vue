@@ -11,11 +11,6 @@ import { mapGetters } from "vuex";
 
 export default {
   components: { CHeader },
-  data() {
-    return {
-      defaultIdCity: 1,
-    };
-  },
   computed: {
     ...mapGetters({
       recordedIdCity: "recordedIdCity",
@@ -30,15 +25,8 @@ export default {
     },
   },
   created() {
-    this.writeLocalId();
-    this.$store.dispatch("getTags", this.recordedIdCity);
-  },
-  methods: {
-    writeLocalId() {
-      if (!this.recordedIdCity) {
-        this.$store.dispatch("writeIdCity", this.defaultIdCity);
-      }
-    },
+    this.$store.dispatch("writeIdCity", this.recordedIdCity);
+    this.$store.dispatch("getTags", );
   },
 };
 </script>
