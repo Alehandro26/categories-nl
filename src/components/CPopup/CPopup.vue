@@ -1,55 +1,57 @@
 <template>
-  <div class="popup" :class="{ popup_open: open }">
-    <div class="popup__background" @click="closePopup" />
+  <Teleport v-if="openPopup" to="body">
+    <div class="popup" :class="{ popup_close: animationClose }">
+      <div class="popup__background" @click="closePopup" />
 
-    <section class="popup__wrapper">
-      <h3 class="popup__title">Выбор населённого пункта:</h3>
-      <div class="popup__body">
-        <div class="popup__input-wrapper">
-          <input
-            v-model="keyWord"
-            type="text"
-            class="popup__input"
-            :class="{ popup__input_active: listCities }"
-            placeholder="Например, Санкт-петербург"
-          />
-          <div v-if="listCities" class="popup__list-wrapper">
-            <div class="popup__list-contain">
-              <ul class="popup__list">
-                <li
-                  v-for="city in listCities"
-                  :key="city.id"
-                  class="popup__list-item"
-                  @click="selectCity(city)"
-                >
-                  {{ city.label }}
-                </li>
-              </ul>
+      <section class="popup__wrapper">
+        <h3 class="popup__title">Выбор населённого пункта:</h3>
+        <div class="popup__body">
+          <div class="popup__input-wrapper">
+            <input
+              v-model="keyWord"
+              type="text"
+              class="popup__input"
+              :class="{ popup__input_active: listCities }"
+              placeholder="Например, Санкт-петербург"
+            />
+            <div v-if="listCities" class="popup__list-wrapper">
+              <div class="popup__list-contain">
+                <ul class="popup__list">
+                  <li
+                    v-for="city in listCities"
+                    :key="city.id"
+                    class="popup__list-item"
+                    @click="selectCity(city)"
+                  >
+                    {{ city.label }}
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          <button
-            v-if="checkClearInput"
-            class="popup__input-clear"
-            @click="clearInputArea"
-          />
-        </div>
-        <div
-          class="popup__submit-wrapper"
-          :class="{ 'popup__submit-wrapper_active': selectedCity }"
-        >
-          <button
-            class="popup__submit"
-            :disabled="!selectedCity"
-            @click="submit"
+            <button
+              v-if="checkClearInput"
+              class="popup__input-clear"
+              @click="clearInputArea"
+            />
+          </div>
+          <div
+            class="popup__submit-wrapper"
+            :class="{ 'popup__submit-wrapper_active': selectedCity }"
           >
-            Подтвердить
-          </button>
+            <button
+              class="popup__submit"
+              :disabled="!selectedCity"
+              @click="submit"
+            >
+              Подтвердить
+            </button>
+          </div>
         </div>
-      </div>
-      <button class="popup__close" @click="closePopup" />
-    </section>
-  </div>
+        <button class="popup__close" @click="closePopup" />
+      </section>
+    </div>
+  </Teleport>
 </template>
 
 <script>
@@ -68,6 +70,8 @@ export default {
       keyWord: "",
       listCities: null,
       selectedCity: null,
+      animationClose: false,
+      openPopup: false,
     };
   },
   computed: {
@@ -85,8 +89,18 @@ export default {
       if (v.length < 3) this.listCities = null;
       if (this.selectedCity?.label !== v) this.selectedCity = null;
     },
-    open() {
+    open(v) {
       document.body.classList.toggle("no-scroll");
+
+      if (v) this.openPopup = true;
+      if (!v) {
+        this.animationClose = true;
+
+        setTimeout(() => {
+          this.openPopup = false;
+          this.animationClose = false;
+        }, 300);
+      }
     },
   },
   methods: {
@@ -119,7 +133,7 @@ export default {
 
 <style>
 .popup {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -139,7 +153,11 @@ export default {
   width: 100%;
   height: 100%;
   background: #353647;
-  opacity: 0.8;
+  animation: backgroundOpen 0.2s forwards ease-in;
+}
+
+.popup_close .popup__background {
+  animation: backgroundClose 0.2s forwards ease-in;
 }
 
 .popup__wrapper {
@@ -153,6 +171,11 @@ export default {
   background: var(--color-white);
   box-shadow: 0px 2px 10px rgba(151, 151, 151, 0.2);
   border-radius: 5px;
+  animation: popupOpen 0.3s forwards ease-in;
+}
+
+.popup_close .popup__wrapper {
+  animation: popupClose 0.3s forwards ease-in;
 }
 
 .popup__title {
@@ -330,6 +353,46 @@ export default {
 
   .popup__list-item {
     font-size: 14px;
+  }
+}
+
+@keyframes backgroundOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes backgroundClose {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes popupOpen {
+  from {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1.2) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateX(-50%);
+  }
+}
+
+@keyframes popupClose {
+  from {
+    opacity: 1;
+    transform: scaleX(1) translateX(-50%);
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(1.2, 1.2, 1.2) translateX(-50%);
   }
 }
 </style>
