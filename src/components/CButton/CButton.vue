@@ -1,31 +1,28 @@
 <template>
-  <div class="button" :class="{ button_active: available }">
-    <button class="button__submit" :disabled="!available" @click="click">
+  <div class="button" :class="{ button_active: props.available }">
+    <button class="button__submit" :disabled="!props.available" @click="click">
       {{ text }}
     </button>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    available: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+import { computed } from "vue";
+
+const props = defineProps({
+  available: {
+    type: Boolean,
+    default: false,
   },
-  emits: ["click"],
-  computed: {
-    text() {
-      return this.available ? "В корзину" : "Нет в наличии";
-    },
-  },
-  methods: {
-    click() {
-      this.$emit("click");
-    },
-  },
-};
+});
+const emits = defineEmits(["click"]);
+const text = computed(() => {
+  return props.available ? "В корзину" : "Нет в наличии";
+});
+
+function click() {
+  emits("click");
+}
 </script>
 
 <style>

@@ -14,42 +14,42 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { getDataCity } from "@/api";
 import CPopup from "../CPopup/CPopup.vue";
+import { onMounted, ref, watch } from "vue";
+import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 
-export default {
-  components: { CPopup },
-  data() {
-    return {
-      popupOpen: false,
-      cityName: "",
-      id: null,
-    };
-  },
-  watch: {
-    id() {
-      this.$store.dispatch("writeIdCity", +this.id);
-      this.$router.push("/");
-    },
-  },
-  mounted() {
-    this.getDataCityById(this.$store.getters.recordedIdCity);
-  },
-  methods: {
-    async getDataCityById(id) {
-      const { data } = await getDataCity(id);
-      this.cityName = data.city;
-    },
-    togglePopup() {
-      this.popupOpen = !this.popupOpen;
-    },
-    getData(data) {
-      this.cityName = data.city;
-      this.id = data.id;
-    },
-  },
-};
+const store = useStore();
+const router = useRouter();
+
+const popupOpen = ref(false);
+const cityName = ref("");
+const id = ref("");
+
+watch(id, () => {
+  store.dispatch("writeIdCity", +id.value);
+  router.push("/");
+});
+
+onMounted(() => {
+  getDataCityById(store.getters.recordedIdCity);
+});
+
+async function getDataCityById(id) {
+  const { data } = await getDataCity(id);
+  cityName.value = data.city;
+}
+
+function togglePopup() {
+  popupOpen.value = !popupOpen.value;
+}
+
+function getData(data) {
+  cityName.value = data.city;
+  id.value = data.id;
+}
 </script>
 
 <style>

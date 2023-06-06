@@ -19,7 +19,7 @@
         />
         <div class="categories__wrapper">
           <CategoriesCard
-            v-for="(product, index) in products"
+            v-for="(product, index) in productsData"
             :key="index"
             :data="product"
           />
@@ -30,62 +30,55 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import CLoad from "../CLoad/CLoad.vue";
 import CSidebar from "../CSidebar/CSidebar.vue";
 import CategoriesCard from "./CategoriesCard.vue";
-import { mapState, mapGetters } from "vuex";
+import { useStore } from "vuex";
 import { getProducts } from "@/api";
+import { computed, onMounted, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-export default {
-  components: { CSidebar, CategoriesCard, CLoad },
-  data() {
-    return {
-      products: null,
-      openSidebar: false,
-    };
-  },
-  computed: {
-    ...mapState({
-      tags: "tags",
-    }),
-    ...mapGetters({
-      recordedIdCity: "recordedIdCity",
-    }),
-    dataTag() {
-      return this.tags.find((item) => item.slug === this.$route.params.slug);
-    },
-  },
-  mounted() {
-    this.loadProducts();
-  },
-  methods: {
-    goToCategory(data) {
-      const [slug] = data;
-      if (slug) {
-        this.$router.push(`/categories/${this.$route.params.slug}/${slug}/`);
-      } else {
-        this.$router.push(`/categories/${this.$route.params.slug}/`);
-      }
-      setTimeout(() => this.loadProducts());
+const store = useStore();
+const route = useRoute();
+const router = useRouter();
 
-      if (this.openSidebar) {
-        this.openSidebar = false;
-      }
-    },
-    async loadProducts() {
-      const { products } = await getProducts(
-        this.recordedIdCity,
-        this.$route.params.subslug || this.$route.params.slug
-      );
+const productsData = ref(null);
+const openSidebar = ref(false);
 
-      this.products = products;
-    },
-    toggleSidebar() {
-      this.openSidebar = !this.openSidebar;
-    },
-  },
-};
+const tags = computed(() => store.state.tags);
+const recordedIdCity = computed(() => store.getters.recordedIdCity);
+const dataTag = computed(() => {
+  return tags.value.find((item) => item.slug === route.params.slug);
+});
+
+onMounted(loadProducts);
+
+function goToCategory(data) {
+  const [slug] = data;
+  if (slug) {
+    router.push(`/categories/${route.params.slug}/${slug}/`);
+  } else {
+    router.push(`/categories/${route.params.slug}/`);
+  }
+  setTimeout(() => this.loadProducts());
+
+  if (openSidebar.value) {
+    openSidebar.value = false;
+  }
+}
+
+async function loadProducts() {
+  const { products } = await getProducts(
+    recordedIdCity.value,
+    route.params.subslug || route.params.slug
+  );
+  productsData.value = products;
+}
+
+function toggleSidebar() {
+  openSidebar.value = !openSidebar.value;
+}
 </script>
 
 <style>

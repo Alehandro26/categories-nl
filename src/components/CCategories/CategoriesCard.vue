@@ -19,18 +19,17 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from "vue";
 import CButton from "../CButton/CButton.vue";
 
-export default {
-  components: { CButton },
-  props: {
-    data: {
+const props = defineProps({
+  data: {
       type: Object,
       default: () => {},
     },
-  },
-};
+})
+const data = computed(() => props.data)
 </script>
 
 <style>
