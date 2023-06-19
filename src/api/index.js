@@ -4,7 +4,8 @@ import dataCity from "../../__mocks__/data-city.json";
 import listCities from "../../__mocks__/list-cities.json";
 import products from "../../__mocks__/products.json";
 
-const useMock = !import.meta.env?.MODE === "development";
+// const useMock = !import.meta.env?.MODE === "development";
+const useMock = false;
 
 const api = axios.create({
   baseURL: "https://nlstar.com/ru/api/catalog3/v1",

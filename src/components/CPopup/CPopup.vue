@@ -217,7 +217,8 @@ function submit() {
 .popup__list-wrapper {
   padding: calc(12 / 16 * 1rem) calc(11 / 16 * 1rem);
   position: absolute;
-  height: calc(172 / 16 * 1rem);
+  overflow: scroll;
+  max-height: calc(172 / 16 * 1rem);
   width: 100%;
   background: var(--color-white);
   border: solid var(--color-dark-gray);

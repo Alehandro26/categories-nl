@@ -26,7 +26,7 @@ export default {
   },
   created() {
     this.$store.dispatch("writeIdCity", this.recordedIdCity);
-    this.$store.dispatch("getTags", );
+    this.$store.dispatch("getTags", this.recordedIdCity);
   },
 };
 </script>

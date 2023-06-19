@@ -10,16 +10,16 @@ const pathToRegexpOptions = {
 
 export default createRouter({
   history: createWebHistory(),
-  base: "/",
+  base: "/categories-nl/",
   routes: [
     {
-      path: "/",
+      path: "/categories-nl/",
       name: "main",
       component: MainPage,
       pathToRegexpOptions,
     },
     {
-      path: "/categories/:slug/:subslug?/",
+      path: "/categories-nl/categories/:slug/:subslug?/",
       name: "categories",
       component: CategoriesPage,
       pathToRegexpOptions,
