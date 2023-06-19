@@ -2,9 +2,9 @@
   <section class="promo">
     <div class="promo__contain contain">
       <h2 class="promo__title">Категории товаров</h2>
-      <div v-if="tags" class="promo__list">
+      <div v-if="$store.state.tags" class="promo__list">
         <PromoCard
-          v-for="(item, index) in tags"
+          v-for="(item, index) in $store.state.tags"
           :key="index"
           class="promo__item"
           :title="item.name"
@@ -18,19 +18,9 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import CLoad from "../CLoad/CLoad.vue";
 import PromoCard from "./PromoCard.vue";
-import { mapState } from "vuex";
-
-export default {
-  components: { PromoCard, CLoad },
-  computed: {
-    ...mapState({
-      tags: "tags",
-    }),
-  },
-};
 </script>
 
 <style>

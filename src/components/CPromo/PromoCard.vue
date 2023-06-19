@@ -1,31 +1,31 @@
 <template>
-  <router-link :to="`/categories/${slug}/`" class="promo-card">
-    <h3 class="promo-card__title" :style="{ color: textColor }">{{ title }}</h3>
-    <img :src="image" alt="" class="promo-card__image" />
+  <router-link :to="`/categories/${props.slug}/`" class="promo-card">
+    <h3 class="promo-card__title" :style="{ color: props.textColor }">
+      {{ props.title }}
+    </h3>
+    <img :src="props.image" alt="" class="promo-card__image" />
   </router-link>
 </template>
 
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      default: "",
-    },
-    image: {
-      type: String,
-      default: "",
-    },
-    textColor: {
-      type: String,
-      default: "#FFFFFF",
-    },
-    slug: {
-      type: String,
-      default: "",
-    },
+<script setup>
+const props = defineProps({
+  title: {
+    type: String,
+    default: "",
   },
-};
+  image: {
+    type: String,
+    default: "",
+  },
+  textColor: {
+    type: String,
+    default: "#FFFFFF",
+  },
+  slug: {
+    type: String,
+    default: "",
+  },
+});
 </script>
 
 <style>

@@ -54,81 +54,78 @@
   </Teleport>
 </template>
 
-<script>
+<script setup>
+import { computed, ref, watch } from "vue";
 import { getListCities } from "../../api";
 
-export default {
-  props: {
-    open: {
-      type: Boolean,
-      default: false,
-    },
+const props = defineProps({
+  open: {
+    type: Boolean,
+    default: false,
   },
-  emits: ["close", "selectedCity"],
-  data() {
-    return {
-      keyWord: "",
-      listCities: null,
-      selectedCity: null,
-      animationClose: false,
-      openPopup: false,
-    };
-  },
-  computed: {
-    checkClearInput() {
-      return this.keyWord.length > 0;
-    },
-  },
-  watch: {
-    keyWord(v, ov) {
-      if (!v || v === ov) return;
+});
+const emits = defineEmits(["close", "selectedCity"]);
 
-      this.keyWord = v.replace(/\d+/, "");
+const keyWord = ref("");
+const listCities = ref(null);
+const selectedCity = ref(null);
+const animationClose = ref(null);
+const openPopup = ref(null);
 
-      if (v.length >= 3 && !this.selectedCity) this.getList(v);
-      if (v.length < 3) this.listCities = null;
-      if (this.selectedCity?.label !== v) this.selectedCity = null;
-    },
-    open(v) {
-      document.body.classList.toggle("no-scroll");
+const checkClearInput = computed(() => keyWord.value.length > 0);
 
-      if (v) this.openPopup = true;
-      if (!v) {
-        this.animationClose = true;
+watch(
+  () => keyWord.value,
+  (v, ov) => {
+    if (!v || v === ov) return;
 
-        setTimeout(() => {
-          this.openPopup = false;
-          this.animationClose = false;
-        }, 300);
-      }
-    },
-  },
-  methods: {
-    async getList(term) {
-      const { data } = await getListCities(term);
+    keyWord.value = v.replace(/\d+/, "");
 
-      this.listCities = data;
-    },
-    clearInputArea() {
-      this.keyWord = "";
-      this.listCities = null;
-      this.selectedCity = null;
-    },
-    closePopup() {
-      this.clearInputArea();
-      this.$emit("close");
-    },
-    selectCity(data) {
-      this.selectedCity = data;
-      this.keyWord = this.selectedCity.label;
-      this.listCities = null;
-    },
-    submit() {
-      this.$emit("selectedCity", this.selectedCity);
-      this.closePopup();
-    },
-  },
-};
+    if (v.length >= 3 && !selectedCity.value) getList(v);
+    if (v.length < 3) listCities.value = null;
+    if (selectedCity.value?.label !== v) selectedCity.value = null;
+  }
+);
+watch(
+  () => props.open,
+  (v) => {
+    document.body.classList.toggle("no-scroll");
+
+    if (v) openPopup.value = true;
+    if (!v) {
+      animationClose.value = true;
+
+      setTimeout(() => {
+        openPopup.value = false;
+        animationClose.value = false;
+      }, 300);
+    }
+  }
+);
+
+async function getList(term) {
+  const { data } = await getListCities(term);
+
+  listCities.value = data;
+}
+function clearInputArea() {
+  keyWord.value = "";
+  listCities.value = null;
+  selectedCity.value = null;
+}
+function closePopup() {
+  clearInputArea();
+  emits("close");
+}
+function selectCity(data) {
+  selectedCity.value = data;
+  keyWord.value = selectedCity.value.label;
+  listCities.value = null;
+}
+function submit() {
+  emits("selectedCity", selectedCity.value);
+  closePopup();
+}
 </script>
 
 <style>
