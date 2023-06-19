@@ -2,7 +2,7 @@
   <div class="categories">
     <div v-if="tags" class="categories__contain contain">
       <div class="categories__head">
-        <router-link to="/" class="categories__button-back" />
+        <router-link to="/categories-nl/" class="categories__button-back" />
         <h2 class="categories__title">{{ dataTag.name }}</h2>
         <button
           class="categories__button-sidebar"
@@ -57,9 +57,9 @@ onMounted(loadProducts);
 function goToCategory(data) {
   const [slug] = data;
   if (slug) {
-    router.push(`/categories/${route.params.slug}/${slug}/`);
+    router.push(`/categories-nl/categories/${route.params.slug}/${slug}/`);
   } else {
-    router.push(`/categories/${route.params.slug}/`);
+    router.push(`/categories-nl/categories/${route.params.slug}/`);
   }
   setTimeout(() => this.loadProducts());
 

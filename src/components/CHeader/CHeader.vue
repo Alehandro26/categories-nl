@@ -30,7 +30,7 @@ const id = ref("");
 
 watch(id, () => {
   store.dispatch("writeIdCity", +id.value);
-  router.push("/");
+  router.push("/categories-nl/");
 });
 
 onMounted(() => {

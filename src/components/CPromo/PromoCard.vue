@@ -1,5 +1,8 @@
 <template>
-  <router-link :to="`/categories/${props.slug}/`" class="promo-card">
+  <router-link
+    :to="`/categories-nl/categories/${props.slug}/`"
+    class="promo-card"
+  >
     <h3 class="promo-card__title" :style="{ color: props.textColor }">
       {{ props.title }}
     </h3>
