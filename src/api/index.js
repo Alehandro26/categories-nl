@@ -1,4 +1,10 @@
 import axios from "axios";
+import menuTags from "../../__mocks__/menu-tags.json";
+import dataCity from "../../__mocks__/data-city.json";
+import listCities from "../../__mocks__/list-cities.json";
+import products from "../../__mocks__/products.json";
+
+const useMock = !import.meta.env?.MODE === "development";
 
 const api = axios.create({
   baseURL: "https://nlstar.com/ru/api/catalog3/v1",
@@ -9,6 +15,9 @@ const api = axios.create({
  * @returns
  */
 export async function getMenuTags(cityId) {
+  if (useMock) {
+    return menuTags;
+  }
   const { data } = await api.get("/menutags", {
     params: {
       city_id: cityId,
@@ -19,6 +28,9 @@ export async function getMenuTags(cityId) {
 }
 
 export async function getDataCity(id) {
+  if (useMock) {
+    return dataCity;
+  }
   const { data } = await api.get("/city", {
     params: {
       id,
@@ -29,6 +41,9 @@ export async function getDataCity(id) {
 }
 
 export async function getListCities(term, country = "ru") {
+  if (useMock) {
+    return listCities;
+  }
   const { data } = await api.get("/city", {
     params: {
       term,
@@ -40,6 +55,9 @@ export async function getListCities(term, country = "ru") {
 }
 
 export async function getProducts(cityId, slug) {
+  if (useMock) {
+    return products;
+  }
   const { data } = await api.get(`/menutags/${slug}/`, {
     params: {
       city_id: cityId,

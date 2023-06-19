@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": 1,
+    "label": "Россия, Новосибирская область, Новосибирск",
+    "city": "Новосибирск",
+    "region": "Новосибирская область",
+    "region_id": 45,
+    "country": "Россия",
+    "is_megalopolis": true,
+    "country_id": 1,
+    "country_alias": "ru"
+  }
+}
