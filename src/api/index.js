@@ -1,8 +1,8 @@
 import axios from "axios";
-import menuTags from "../../__mocks__/menu-tags.json";
-import dataCity from "../../__mocks__/data-city.json";
-import listCities from "../../__mocks__/list-cities.json";
-import products from "../../__mocks__/products.json";
+import menuTags from "../assets/__mocks__/menu-tags.json";
+import dataCity from "../assets/__mocks__/data-city.json";
+import listCities from "../assets/__mocks__/list-cities.json";
+import products from "../assets/__mocks__/products.json";
 
 const useMock = !import.meta.env?.MODE === "development";
 
