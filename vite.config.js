@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   });
 
   return {
+    base: "/categories-nl/",
     plugins: [vue()],
     server: {
       port: 8080,
