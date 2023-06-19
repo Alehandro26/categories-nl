@@ -1,0 +1,910 @@
+{
+  "tags": [
+    {
+      "name": "Для поста",
+      "image": "https://183930.selcdn.ru/media/products/categories/fee4f1690c23d895c73cb8f370af094f3ff4c855.jpg",
+      "children": [],
+      "text_color": "#ffffff",
+      "id": 176,
+      "size": "small",
+      "type": 1,
+      "slug": "post",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/post/"
+    },
+    {
+      "name": "Для Рамадана",
+      "image": "https://183930.selcdn.ru/media/products/categories/025f7adef9414b0c62da6dd2f9237fd38e43e91f.jpg",
+      "children": [],
+      "text_color": "#ffffff",
+      "id": 177,
+      "size": "small",
+      "type": 1,
+      "slug": "ramadan",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/ramadan/"
+    },
+    {
+      "name": "Функциональные коктейли",
+      "image": "https://183930.selcdn.ru/media/products/categories/001b50f13e92194a6aca8be258481fc748cfd5fa.jpg",
+      "children": [
+        {
+          "id": 144,
+          "slug": "cocktails-ed-hd",
+          "name": "Коктейли ED HD ",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cocktails-ed-hd/"
+        },
+        {
+          "id": 145,
+          "slug": "cocktails-Smart",
+          "name": "Коктейли Smart \t",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cocktails-Smart/"
+        },
+        {
+          "id": 146,
+          "slug": "cocktails-smart-go",
+          "name": "Коктейли Smart GO",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cocktails-smart-go/"
+        },
+        {
+          "id": 147,
+          "slug": "up2u",
+          "name": "Коктейль-конструктор UP2U",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/up2u/"
+        },
+        {
+          "id": 148,
+          "slug": "carbo-light",
+          "name": "Коктейли Carbo Light",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/carbo-light/"
+        },
+        {
+          "id": 86,
+          "slug": "shakers",
+          "name": "Шейкеры",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/shakers/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 65,
+      "size": "small",
+      "type": 1,
+      "slug": "functional-cocktails",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/functional-cocktails/"
+    },
+    {
+      "name": "БАД",
+      "image": "https://183930.selcdn.ru/media/products/categories/23a270e0e2953a5b92b392945aa4992a82a558c8.jpg",
+      "children": [
+        {
+          "id": 57,
+          "slug": "bad-herbal",
+          "name": "Фиточаи",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/bad-herbal/"
+        },
+        {
+          "id": 85,
+          "slug": "greenflash",
+          "name": "БАД",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/greenflash/"
+        },
+        {
+          "id": 140,
+          "slug": "weight-loss",
+          "name": "Похудение",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/weight-loss/"
+        },
+        {
+          "id": 161,
+          "slug": "peptides",
+          "name": "Пептиды",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/peptides/"
+        },
+        {
+          "id": 171,
+          "slug": "detox",
+          "name": "Детокс",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/detox/"
+        },
+        {
+          "id": 174,
+          "slug": "immuno",
+          "name": "Иммуно",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/immuno/"
+        },
+        {
+          "id": 175,
+          "slug": "antistress",
+          "name": "Антистресс",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/antistress/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 55,
+      "size": "small",
+      "type": 1,
+      "slug": "bad",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/bad/"
+    },
+    {
+      "name": "Адаптогены",
+      "image": "https://183930.selcdn.ru/media/products/categories/66c0bded34982f7868bc741c43ae835d07e4e6d8.jpg",
+      "children": [
+        {
+          "id": 99,
+          "slug": "biotune",
+          "name": "Сыворотка Биотюн",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/biotune/"
+        },
+        {
+          "id": 100,
+          "slug": "biodrone",
+          "name": "Гуминовые кислоты",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/biodrone/"
+        },
+        {
+          "id": 101,
+          "slug": "ph-balance",
+          "name": "PH Баланс",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/ph-balance/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 50,
+      "size": "small",
+      "type": 1,
+      "slug": "adaptogens",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/adaptogens/"
+    },
+    {
+      "name": "Сбалансированное питание",
+      "image": "https://183930.selcdn.ru/media/products/categories/76d10e7e27584a604d13df06519b6843e0339c53.jpg",
+      "children": [
+        {
+          "id": 168,
+          "slug": "food-drops",
+          "name": "Дропсы",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/food-drops/"
+        },
+        {
+          "id": 94,
+          "slug": "soups",
+          "name": "Супы",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/soups/"
+        },
+        {
+          "id": 104,
+          "slug": "superfoods",
+          "name": "Суперфуды",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/superfoods/"
+        },
+        {
+          "id": 153,
+          "slug": "protein-bars-balanced",
+          "name": "Протеиновые батончики",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/protein-bars-balanced/"
+        },
+        {
+          "id": 106,
+          "slug": "topping",
+          "name": "Топпинги",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/topping/"
+        },
+        {
+          "id": 150,
+          "slug": "bread",
+          "name": "Хлеб",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/bread/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 2,
+      "size": "small",
+      "type": 1,
+      "slug": "food",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/food/"
+    },
+    {
+      "name": "Похудение",
+      "image": "https://183930.selcdn.ru/media/products/categories/2d48b492658f2050db702fe1c3a846f2b4d4db8f.jpg",
+      "children": [
+        {
+          "id": 13,
+          "slug": "diet-cosmetic",
+          "name": "Косметика для похудения",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/diet-cosmetic/"
+        },
+        {
+          "id": 76,
+          "slug": "draining-drinks",
+          "name": "Дренирующие напитки",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/draining-drinks/"
+        },
+        {
+          "id": 78,
+          "slug": "slimming-program",
+          "name": "Программа похудения",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/slimming-program/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 11,
+      "size": "small",
+      "type": 1,
+      "slug": "diet",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/diet/"
+    },
+    {
+      "name": "Полезные лакомства",
+      "image": "https://183930.selcdn.ru/media/products/categories/30b19d2f5ddb6babc79ef0a31fc45307225da045.jpg",
+      "children": [
+        {
+          "id": 167,
+          "slug": "drops",
+          "name": "Дропсы",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/drops/"
+        },
+        {
+          "id": 71,
+          "slug": "panna-cotta",
+          "name": "Панна-котта",
+          "text_color": "#202648",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/panna-cotta/"
+        },
+        {
+          "id": 75,
+          "slug": "protein-bars",
+          "name": "Протеиновые батончики",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/protein-bars/"
+        },
+        {
+          "id": 72,
+          "slug": "fruit-bars",
+          "name": "Фруктовые батончики",
+          "text_color": "#202648",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/fruit-bars/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 5,
+      "size": "small",
+      "type": 1,
+      "slug": "sweets",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/sweets/"
+    },
+    {
+      "name": "Напитки",
+      "image": "https://183930.selcdn.ru/media/products/categories/3f058e5f2b7e6bba84d272d75f29dd411a7c76c4.jpg",
+      "children": [
+        {
+          "id": 6,
+          "slug": "tea",
+          "name": "Чаи",
+          "text_color": "#202648",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/tea/"
+        },
+        {
+          "id": 70,
+          "slug": "hot-drinks",
+          "name": "Горячие напитки",
+          "text_color": "#202648",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/hot-drinks/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 62,
+      "size": "small",
+      "type": 1,
+      "slug": "drinks",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/drinks/"
+    },
+    {
+      "name": "Халяль",
+      "image": "https://183930.selcdn.ru/media/products/categories/e724a07b6f550f540c6eee224ba62000a9601ebf.jpg",
+      "children": [
+        {
+          "id": 157,
+          "slug": "functional-cocktails-halal",
+          "name": "Функциональные коктейли",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/functional-cocktails-halal/"
+        },
+        {
+          "id": 158,
+          "slug": "food-halal",
+          "name": "Сбалансированное питание",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/food-halal/"
+        },
+        {
+          "id": 159,
+          "slug": "drinks-halal",
+          "name": "Напитки",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/drinks-halal/"
+        },
+        {
+          "id": 160,
+          "slug": "slimm-halal",
+          "name": "Похудение",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/slimm-halal/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 142,
+      "size": "small",
+      "type": 1,
+      "slug": "halal",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/halal/"
+    },
+    {
+      "name": "Уход за лицом",
+      "image": "https://183930.selcdn.ru/media/products/categories/ca05027d967913ed120bd42756d58fc2ffded674.png",
+      "children": [
+        {
+          "id": 130,
+          "slug": "serums",
+          "name": "Сыворотки",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/serums/"
+        },
+        {
+          "id": 129,
+          "slug": "cream",
+          "name": "Кремы",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cream/"
+        },
+        {
+          "id": 179,
+          "slug": "balms-and-CC-creams",
+          "name": "Бальзамы и СС кремы",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/balms-and-CC-creams/"
+        },
+        {
+          "id": 131,
+          "slug": "masks-and-patches",
+          "name": "Маски и патчи",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/masks-and-patches/"
+        },
+        {
+          "id": 181,
+          "slug": "eyecare",
+          "name": "Уход за кожей вокруг глаз",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/eyecare/"
+        },
+        {
+          "id": 182,
+          "slug": "nightcare",
+          "name": "Ночной уход",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/nightcare/"
+        },
+        {
+          "id": 128,
+          "slug": "cleansing",
+          "name": "Очищение",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cleansing/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 21,
+      "size": "small",
+      "type": 1,
+      "slug": "face-care",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/face-care/"
+    },
+    {
+      "name": "Веган",
+      "image": "https://183930.selcdn.ru/media/products/categories/784743b00c172e6cf2f9bae72fd4fb6669662963.jpg",
+      "children": [],
+      "text_color": "#000000",
+      "id": 143,
+      "size": "small",
+      "type": 1,
+      "slug": "vegan",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/vegan/"
+    },
+    {
+      "name": "Уход за телом",
+      "image": "https://183930.selcdn.ru/media/products/categories/454d82e5e82b837b5cd0b8e7c3484616abc85f22.jpg",
+      "children": [
+        {
+          "id": 31,
+          "slug": "sanitizers",
+          "name": "Санитайзеры",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/sanitizers/"
+        },
+        {
+          "id": 112,
+          "slug": "shower-gels",
+          "name": "Гели для душа",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/shower-gels/"
+        },
+        {
+          "id": 113,
+          "slug": "body-scrubs",
+          "name": "Скрабы для тела",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/body-scrubs/"
+        },
+        {
+          "id": 114,
+          "slug": "body-creams-and-milks",
+          "name": "Кремы и молочко для тела",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/body-creams-and-milks/"
+        },
+        {
+          "id": 115,
+          "slug": "hand-and-feet-care",
+          "name": "Уход для рук и ног",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/hand-and-feet-care/"
+        },
+        {
+          "id": 118,
+          "slug": "anti-cellulite-products",
+          "name": "Антицеллюлитные средства",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/anti-cellulite-products/"
+        },
+        {
+          "id": 119,
+          "slug": "deodorants",
+          "name": "Дезодоранты",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/deodorants/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 22,
+      "size": "small",
+      "type": 1,
+      "slug": "body-care",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/body-care/"
+    },
+    {
+      "name": "Мужская косметика",
+      "image": "https://183930.selcdn.ru/media/products/categories/e178df173339566fd10b34cb70f3847d78ad415b.jpg",
+      "children": [],
+      "text_color": "#000000",
+      "id": 41,
+      "size": "small",
+      "type": 1,
+      "slug": "mens",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/mens/"
+    },
+    {
+      "name": "Макияж",
+      "image": "https://183930.selcdn.ru/media/products/categories/40837551379982dc17603bc4305d5328afa350e3.jpg",
+      "children": [
+        {
+          "id": 15,
+          "slug": "eyes-makeup",
+          "name": "Для глаз",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/eyes-makeup/"
+        },
+        {
+          "id": 17,
+          "slug": "face-makeup",
+          "name": "Для лица",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/face-makeup/"
+        },
+        {
+          "id": 18,
+          "slug": "makeup-access",
+          "name": "Аксессуары",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/makeup-access/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 14,
+      "size": "small",
+      "type": 1,
+      "slug": "makeup",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/makeup/"
+    },
+    {
+      "name": "Уход за волосами",
+      "image": "https://183930.selcdn.ru/media/products/categories/ec0268ed2e168a5c62d6a77b8569a7a77effa67e.jpg",
+      "children": [
+        {
+          "id": 120,
+          "slug": "shampoo",
+          "name": "Шампуни и бальзамы",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/shampoo/"
+        },
+        {
+          "id": 121,
+          "slug": "balms-and-conditioners",
+          "name": "Бальзамы и кондиционеры",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/balms-and-conditioners/"
+        },
+        {
+          "id": 122,
+          "slug": "masks",
+          "name": "Маски",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/masks/"
+        },
+        {
+          "id": 123,
+          "slug": "leave-in-products",
+          "name": "Несмываемые средства",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/leave-in-products/"
+        },
+        {
+          "id": 138,
+          "slug": "hair-serums",
+          "name": "Сыворотки",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/hair-serums/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 23,
+      "size": "small",
+      "type": 1,
+      "slug": "hair-care",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/hair-care/"
+    },
+    {
+      "name": "Уход за полостью рта",
+      "image": "https://183930.selcdn.ru/media/products/categories/e0da937a6783c665bc6a571765c43b8a92a9e2fa.jpg",
+      "children": [
+        {
+          "id": 26,
+          "slug": "toothpastes",
+          "name": "Зубные пасты",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/toothpastes/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 25,
+      "size": "small",
+      "type": 1,
+      "slug": "oral-care",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/oral-care/"
+    },
+    {
+      "name": "Парфюм",
+      "image": "https://183930.selcdn.ru/media/products/categories/9a3b02164f442a17049ab934221f0fa01e2cb69d.jpg",
+      "children": [],
+      "text_color": "#000000",
+      "id": 61,
+      "size": "small",
+      "type": 1,
+      "slug": "parfum",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/parfum/"
+    },
+    {
+      "name": "Уборка и стирка",
+      "image": "https://183930.selcdn.ru/media/products/categories/44436040ff7881df6015d4046d03db843ce32bda.jpg",
+      "children": [
+        {
+          "id": 133,
+          "slug": "cleaners-and-detergents",
+          "name": "Чистящие и моющие средства",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cleaners-and-detergents/"
+        },
+        {
+          "id": 135,
+          "slug": "for-washing",
+          "name": "Стирка",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/for-washing/"
+        },
+        {
+          "id": 134,
+          "slug": "cleaning-accessories",
+          "name": "Текстиль",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cleaning-accessories/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 82,
+      "size": "small",
+      "type": 1,
+      "slug": "cleaning",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/cleaning/"
+    },
+    {
+      "name": "Аксессуары",
+      "image": "https://183930.selcdn.ru/media/products/categories/e8657751b5f1b1b399da149e3dfae8b727cec638.jpg",
+      "children": [
+        {
+          "id": 39,
+          "slug": "image-pack",
+          "name": "Имиджевая упаковка",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/image-pack/"
+        },
+        {
+          "id": 87,
+          "slug": "souvenir-products",
+          "name": "Сувенирная продукция",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/souvenir-products/"
+        },
+        {
+          "id": 88,
+          "slug": "business-attributes",
+          "name": "Бизнес-атрибуты",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/business-attributes/"
+        },
+        {
+          "id": 89,
+          "slug": "catalogs-brochures",
+          "name": "Каталог/буклеты",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/catalogs-brochures/"
+        },
+        {
+          "id": 152,
+          "slug": "promo-shakers",
+          "name": "Шейкеры",
+          "text_color": "#000000",
+          "image": null,
+          "size": "small",
+          "type": 2,
+          "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/promo-shakers/"
+        }
+      ],
+      "text_color": "#000000",
+      "id": 34,
+      "size": "small",
+      "type": 1,
+      "slug": "promo",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/promo/"
+    },
+    {
+      "name": "Курсы",
+      "image": "https://183930.selcdn.ru/media/products/categories/0504e517ef249b236b2ef0055dc7f02a646e596a.jpg",
+      "children": [],
+      "text_color": "#000000",
+      "id": 107,
+      "size": "small",
+      "type": 1,
+      "slug": "polzateka",
+      "api_url": "https://nlstar.com/ru/api/catalog3/v1/menutags/polzateka/"
+    }
+  ]
+}
