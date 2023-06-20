@@ -275,6 +275,7 @@ function submit() {
   background-image: url("../../assets/images/close.svg");
   background-size: calc(16 / 16 * 1rem) calc(16 / 16 * 1rem);
   background-position: center;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
@@ -327,6 +328,8 @@ function submit() {
   height: calc(16 / 16 * 1rem);
   background-image: url("../../assets/images/close.svg");
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
