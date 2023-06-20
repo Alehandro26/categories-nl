@@ -1,4 +1,5 @@
 import axios from "axios";
+import { sleep } from "../lib/tools.js";
 import menuTags from "/public/__mocks__/menu-tags.json";
 import dataCity from "/public/__mocks__/data-city.json";
 import listCities from "/public/__mocks__/list-cities.json";
@@ -17,6 +18,7 @@ const api = axios.create({
  */
 export async function getMenuTags(cityId) {
   if (useMock) {
+    await sleep(1500);
     return menuTags;
   }
   const { data } = await api.get("/menutags", {
@@ -24,7 +26,6 @@ export async function getMenuTags(cityId) {
       city_id: cityId,
     },
   });
-
   return data;
 }
 
@@ -57,6 +58,7 @@ export async function getListCities(term, country = "ru") {
 
 export async function getProducts(cityId, slug) {
   if (useMock) {
+    await sleep(1000);
     return products;
   }
   const { data } = await api.get(`/menutags/${slug}/`, {
