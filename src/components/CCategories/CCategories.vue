@@ -150,13 +150,9 @@ function toggleSidebar() {
   .categories__button-sidebar {
     display: block;
   }
-
-  .categories__wrapper {
-    justify-content: center;
-  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   .categories__wrapper {
     gap: 10px;
   }

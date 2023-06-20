@@ -69,7 +69,7 @@ function click() {
   border-radius: 24px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .button__submit {
     width: 150px;
     font-size: 15px;

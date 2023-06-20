@@ -25,11 +25,11 @@ import CButton from "../CButton/CButton.vue";
 
 const props = defineProps({
   data: {
-      type: Object,
-      default: () => {},
-    },
-})
-const data = computed(() => props.data)
+    type: Object,
+    default: () => {},
+  },
+});
+const data = computed(() => props.data);
 </script>
 
 <style>
@@ -82,9 +82,15 @@ const data = computed(() => props.data)
   margin-bottom: 23px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .categories-card {
-    width: 180px;
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+@media (max-width: 599px) {
+  .categories-card {
+    width: calc((100% - 10px) / 2);
   }
 
   .categories-card__text {
