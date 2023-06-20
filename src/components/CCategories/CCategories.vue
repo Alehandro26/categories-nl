@@ -17,13 +17,14 @@
           :subcategories="dataTag.children"
           @select="goToCategory($event)"
         />
-        <div class="categories__wrapper">
+        <div v-if="productsData" class="categories__wrapper">
           <CategoriesCard
             v-for="(product, index) in productsData"
             :key="index"
             :data="product"
           />
         </div>
+        <CLoad v-else />
       </div>
     </div>
     <CLoad v-else />
